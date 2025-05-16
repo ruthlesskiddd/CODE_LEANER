@@ -1,0 +1,649 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #00bfa5;
+}
+
+.nav-button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #00796b;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.hero {
+    padding: 50px;
+    text-align: center;
+    background-color: #e0f7fa;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.language-card {
+    width: 150px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, opacity 0.3s;
+    overflow: visible;
+    z-index: 1;
+    padding: 10px;
+}
+
+.language-logo {
+    max-width: 80%;
+    max-height: 80%;
+    transition: opacity 0.3s;
+    margin-bottom: 10px;
+}
+
+.language-name {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+}
+
+.language-card:hover {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.8;
+    z-index: 999;
+}
+
+.language-card:hover .language-logo {
+    opacity: 0.3;
+}
+
+.language-card:hover .language-name {
+    opacity: 1;
+    visibility: visible;
+}
+
+.language-info {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 10000;
+    pointer-events: none;
+    margin-left: 10px;
+}
+
+.language-card:hover .language-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+.info-section {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 100px; /* Aumentar el margen superior para alejarla de los cuadros */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap; /* Las tarjetas se ajustarán en filas si no caben en una sola */
+    gap: 30px;
+    justify-content: center; /* Asegura que se alineen al centro */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Establece un ancho fijo para las tarjetas */
+    min-height: 250px; /* Cambia a min-height para que la tarjeta crezca según el contenido */
+    overflow: hidden; /* Evita que el contenido se desborde visualmente */
+}
+
+
+.info-card i {
+    font-size: 40px;
+    color: #00bfa5;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-card h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #00796b;
+}
+
+.info-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 20px;
+}
+
+.info-card a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card:hover i {
+    transform: scale(1.2);
+}
+
+footer {
+    text-align: center;
+    padding: 8px 0;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 14px;
+}
+
+/* Fondo y layout */
+.inscripcion-body {
+    background: linear-gradient(135deg, #00bfa5, #00796b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  /* Contenedor del formulario */
+  .inscripcion-form-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: inscripcion-fadeInUp 0.8s ease;
+  }
+  
+  /* Título */
+  .inscripcion-form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00796b;
+  }
+  
+  /* Etiquetas e inputs */
+  .inscripcion-form-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  
+  .inscripcion-form-container input[type="text"],
+  .inscripcion-form-container input[type="email"],
+  .inscripcion-form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .inscripcion-form-container input:focus {
+    border-color: #00bfa5;
+    box-shadow: 0 0 8px rgba(0, 191, 165, 0.4);
+    outline: none;
+  }
+  
+  /* Botón */
+  .inscripcion-form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .inscripcion-form-container button:hover {
+    background-color: #00796b;
+    transform: translateY(-2px);
+  }
+  
+  /* Animación */
+  @keyframes inscripcion-fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+  /* Estilo del contenedor del modal */
+.inscripcion-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Se fija en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que el modal esté encima de otros elementos */
+  }
+  
+  /* Estilo del contenido del modal */
+  .inscripcion-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .inscripcion-modal h2 {
+    color: #00796b;
+    margin-bottom: 20px;
+  }
+  
+  .inscripcion-modal p {
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .inscripcion-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Animación de fade-in para el modal */
+  @keyframes fadeInModal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .inscripcion-modal-content {
+    animation: fadeInModal 0.5s ease-out;
+  }
+
+/* Estilos para la página de cursos */
+.hero-cursos {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e0f7fa;
+    margin-bottom: 40px;
+  }
+  
+  .hero-cursos h1 {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 15px;
+  }
+  
+  .hero-cursos p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .cursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .curso-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .curso-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .curso-logo {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .curso-card h3 {
+    color: #00796b;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .curso-info p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .curso-detalles {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .curso-detalles li {
+    margin-bottom: 8px;
+    color: #666;
+  }
+  
+  .curso-detalles i {
+    color: #00bfa5;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+  }
+  
+  .curso-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+  
+  .curso-precio span {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  .add-to-cart {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #00796b;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center; /* Centrado vertical */
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex; /* Esto hace que los elementos se alineen horizontalmente */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Espacio entre elementos del menú */
+    align-items: center; /* Centrado vertical de los elementos */
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #00bfa5;
+}
+
+.nav-button {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #00796b;
+}
+
+/* Eliminamos el menú hamburguesa ya que no es necesario */
+.menu-toggle {
+    display: none;
+}
+
+/* Eliminamos la media query para móviles */
+@media (max-width: 768px) {
+    /* Eliminado todo el contenido */
+}
+
+/* El resto de tu CSS permanece igual */
+.hero {
+    padding: 50px;
+    text-align: center;
+    background-color: #e0f7fa;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+

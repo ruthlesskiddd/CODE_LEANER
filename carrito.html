@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrito de Cursos</title>
+  <link rel="stylesheet" href="carrito.css">
+</head>
+<body class="carrito-body">
+  <main class="carrito-main">
+    <section class="seccion-cursos">
+      <h1>Resumen del Carrito</h1>
+      <div id="lista-cursos" class="contenedor-cursos">
+      </div>
+      <div id="total-carrito" class="total-carrito">
+        Total: $0.00
+      </div>
+    </section>
+
+    <section class="seccion-pago">
+      <h2>Método de Pago</h2>
+      <form id="formulario-pago" class="formulario-metodo-pago">
+        <label for="nombre-tarjeta">Nombre en la tarjeta:</label>
+        <input type="text" id="nombre-tarjeta" required>
+
+        <label for="numero-tarjeta">Número de tarjeta:</label>
+        <input type="text" id="numero-tarjeta" maxlength="16" required>
+
+        <label for="fecha-expiracion">Fecha de expiración:</label>
+        <input type="month" id="fecha-expiracion" required>
+
+        <label for="codigo-cvc">Código CVC:</label>
+        <input type="text" id="codigo-cvc" maxlength="4" required>
+
+        <button type="submit">Pagar</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts_cursos.js"></script>
+</body>
+</html>

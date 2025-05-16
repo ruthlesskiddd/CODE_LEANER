@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos de Programación | CodeLearner</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CodeLearner</div>
+    <nav>
+      <ul class="nav-links">
+        <li><button onclick="window.location.href='inicio_sesion.html'" class="nav-button">Iniciar sesión</button></li>
+        <li><button onclick="window.location.href='inscripcion.html'" class="nav-button">Regístrate ahora</button></li>
+        <li><a href="proyecto.html">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="carrito.html" class="carrito-icon" title="Ver carrito">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="carrito-contador" id="contador-carrito">0</span>
+        </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-cursos">
+      <h1>Explora nuestros cursos disponibles</h1>
+      <p>Adéntrate en el mundo de la programación y domina las tecnologías más demandadas.</p>
+    </section>
+
+    <section class="cursos-container">
+      <!-- Curso: Python -->
+      <div class="curso-card">
+        <img src="python_logo.jfif" alt="Python Logo" class="curso-logo">
+        <h3>Python para Principiantes</h3>
+        <div class="curso-info">
+          <p>Aprende desde cero hasta desarrollo web y ciencia de datos.</p>
+          <ul class="curso-detalles">
+            <li><i class="fas fa-clock"></i> 40 horas</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluido</li>
+            <li><i class="fas fa-level-up-alt"></i> Nivel: Básico-Intermedio</li>
+          </ul>
+        </div>
+        <div class="curso-precio">
+          <span>$99.99</span>
+          <button class="add-to-cart" data-curso="Python para Principiantes" data-precio="99.99" data-imagen="python_logo.jfif">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <!-- Curso: Java -->
+      <div class="curso-card">
+        <img src="java_logo.png" alt="Java Logo" class="curso-logo">
+        <h3>Java: Desarrollo Profesional</h3>
+        <div class="curso-info">
+          <p>Domina Java EE, Spring Boot y desarrollo de aplicaciones empresariales.</p>
+          <ul class="curso-detalles">
+            <li><i class="fas fa-clock"></i> 60 horas</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluido</li>
+            <li><i class="fas fa-level-up-alt"></i> Nivel: Intermedio-Avanzado</li>
+          </ul>
+        </div>
+        <div class="curso-precio">
+          <span>$129.99</span>
+          <button class="add-to-cart" data-curso="Java: Desarrollo Profesional" data-precio="129.99" data-imagen="java_logo.png">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <!-- Curso: SQL -->
+      <div class="curso-card">
+        <img src="sql_logo.png" alt="SQL Logo" class="curso-logo">
+        <h3>SQL y Bases de Datos</h3>
+        <div class="curso-info">
+          <p>Aprende MySQL, PostgreSQL y optimización de consultas.</p>
+          <ul class="curso-detalles">
+            <li><i class="fas fa-clock"></i> 30 horas</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluido</li>
+            <li><i class="fas fa-level-up-alt"></i> Nivel: Básico-Intermedio</li>
+          </ul>
+        </div>
+        <div class="curso-precio">
+          <span>$79.99</span>
+          <button class="add-to-cart" data-curso="SQL y Bases de Datos" data-precio="79.99" data-imagen="sql_logo.png">Añadir al carrito</button>
+        </div>
+      </div>
+
+      <!-- Curso: C++ -->
+      <div class="curso-card">
+        <img src="c++_logo.png" alt="C++ Logo" class="curso-logo">
+        <h3>C++: Programación de Sistemas</h3>
+        <div class="curso-info">
+          <p>Desarrollo de software de alto rendimiento y videojuegos.</p>
+          <ul class="curso-detalles">
+            <li><i class="fas fa-clock"></i> 50 horas</li>
+            <li><i class="fas fa-certificate"></i> Certificado incluido</li>
+            <li><i class="fas fa-level-up-alt"></i> Nivel: Intermedio-Avanzado</li>
+          </ul>
+        </div>
+        <div class="curso-precio">
+          <span>$119.99</span>
+          <button class="add-to-cart" data-curso="C++: Programación de Sistemas" data-precio="119.99" data-imagen="c++_logo.png">Añadir al carrito</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts_cursos.js"></script>
+</body>
+</html>

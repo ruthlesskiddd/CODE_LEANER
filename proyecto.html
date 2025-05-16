@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Learning de Programación</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CodeLearner</div>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><button onclick="window.location.href='inicio_sesion.html'" class="nav-button">Iniciar sesión</button></li>
+        <li><button onclick="window.location.href='inscripcion.html'" class="nav-button">Regístrate ahora</button></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li>
+            <a href="carrito.html" class="carrito-icon" title="Ver carrito">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="carrito-contador" id="contador-carrito">0</span>
+            </a>
+  </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SOLO UN MAIN -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Aprende a programar desde cero</h2>
+      <p>Explora nuestros cursos interactivos en Python, Java, C++ ¡y más!</p>
+      <button onclick="window.location.href='inscripcion.html'">Inscribirse</button>
+    </section>
+
+    <!-- Primera sección de info cards -->
+    <section class="info-section">
+      <div class="info-container">
+        <div class="info-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>La importancia de aprender a programar</h3>
+          <p>La programación no solo es la base de la creación de software, sino también una habilidad esencial para adaptarse al mundo digital que evoluciona rápidamente.</p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-code"></i>
+          <h3>Lenguajes de programación: ¿Por dónde empezar?</h3>
+          <p>No hay un único camino para aprender a programar. Todo depende de tus intereses y objetivos. Por ejemplo, si te interesa el desarrollo web, aprender HTML, CSS y JavaScript es una excelente forma de comenzar.</p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Beneficios profesionales del aprendizaje de programación</h3>
+          <p>Los programadores están entre los profesionales más demandados. Aprender a programar te puede llevar a trabajos bien remunerados en diversas áreas como el desarrollo web, la ingeniería de software, el análisis de datos, la inteligencia artificial, y más. </p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-users"></i>
+          <h3>Aprendizaje colaborativo y comunidad</h3>
+          <p>Una de las mejores partes del aprendizaje de programación es la comunidad. Al ser un campo tan amplio y popular, existen miles de foros, grupos, y comunidades donde los programadores pueden compartir sus conocimientos, resolver dudas y colaborar en proyectos.</p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-rocket"></i>
+          <h3>Futuro de la programación: Nuevas tecnologías</h3>
+          <p>La programación sigue evolucionando rápidamente. Con la llegada de nuevas tecnologías como la inteligencia artificial, la blockchain y la computación cuántica, los programadores del futuro deberán estar preparados para adaptarse a un entorno de constante cambio.</p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-book-open"></i>
+          <h3>Recursos gratuitos para aprender programación</h3>
+          <p>Existen innumerables recursos gratuitos en línea, desde tutoriales en video hasta plataformas de cursos interactivos. Sitios web como <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a>, <a href="https://www.codecademy.com/" target="_blank">Codecademy</a>, y <a href="https://www.khanacademy.org/computing/computer-programming" target="_blank">Khan Academy</a> ofrecen materiales accesibles para aprender desde lo más básico hasta conceptos avanzados. Además, plataformas como <a href="https://github.com/" target="_blank">GitHub</a> permiten colaborar en proyectos y mejorar tus habilidades prácticas.</p>
+        </div>
+    
+        <div class="info-card">
+          <i class="fas fa-cogs"></i>
+          <h3>La práctica hace al maestro</h3>
+          <p>La clave para mejorar como programador es la práctica constante. Al principio, puede ser difícil comprender todos los conceptos y sintaxis, pero no te desanimes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="languages-section">
+      <div class="languages">
+        <div class="language-card" id="python">
+          <img src="python_logo.jfif" alt="Python Logo" class="language-logo" />
+          <div class="language-name">Python</div>
+          <div class="language-info">Lenguaje popular para ciencia de datos y desarrollo web.</div>
+        </div>
+        <div class="language-card" id="java">
+          <img src="java_logo.png" alt="Java Logo" class="language-logo" />
+          <div class="language-name">Java</div>
+          <div class="language-info">Ideal para desarrollo de aplicaciones empresariales y móviles.</div>
+        </div>
+        <div class="language-card" id="sql">
+          <img src="sql_logo.png" alt="SQL Logo" class="language-logo" />
+          <div class="language-name">SQL</div>
+          <div class="language-info">Lenguaje estándar para gestionar y consultar bases de datos.</div>
+        </div>
+        <div class="language-card" id="cpp">
+          <img src="c++_logo.png" alt="C++ Logo" class="language-logo" />
+          <div class="language-name">C++</div>
+          <div class="language-info">Usado en sistemas, videojuegos y software de alto rendimiento.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Segunda sección de info cards -->
+    <section class="info-section">
+      <div class="info-container">
+        <div class="info-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>¿Por qué aprender a programar?</h3>
+          <p>La programación es una habilidad esencial en el mundo digital. Te permite crear soluciones, automatizar procesos y desarrollar aplicaciones.</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Ventajas del aprendizaje en línea</h3>
+          <p>Aprender en línea te da flexibilidad, acceso a recursos desde cualquier lugar y la oportunidad de avanzar a tu ritmo.</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-code"></i>
+          <h3>Lenguajes populares</h3>
+          <p>Python, Java, HTML y C++ son algunos de los lenguajes más demandados en la industria. Dominar uno puede abrirte muchas puertas.</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Aprendizaje interactivo</h3>
+          <p>Ofrecemos un enfoque práctico e interactivo para que realmente apliques lo que aprendes, desde el primer día.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CodeLearner. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
